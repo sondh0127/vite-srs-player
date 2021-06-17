@@ -1,0 +1,47 @@
+{
+	"version": "0.0.1",
+	"name": "@sondh/vite-srs-player",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/vite-srs-player.umd.js",
+	"module": "./dist/vite-srs-player.es.js",
+	"types": "./dist/main.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/vite-srs-player.es.js",
+			"require": "./dist/vite-srs-player.umd.js"
+		},
+		"./style.css": {
+			"import": "./dist/style.css",
+			"require": "./dist/style.css"
+		}
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc --noEmit && vite build",
+		"serve": "vite preview"
+	},
+	"peerDependencies": {
+		"@vue/composition-api": "1.0.0-rc.11",
+		"vue": "^2.0.0 || >=3.0.0-rc.0"
+	},
+	"peerDependenciesMeta": {
+		"@vue/composition-api": {
+			"optional": true
+		}
+	},
+	"dependencies": {
+		"vue-demi": "^0.9.1"
+	},
+	"devDependencies": {
+		"vue": "^3.0.5",
+		"@vitejs/plugin-vue": "^1.2.3",
+		"@vue/compiler-sfc": "^3.1.1",
+		"typescript": "^4.3.3",
+		"vite": "^2.3.7",
+		"vite-plugin-windicss": "^1.0.4",
+		"vue-tsc": "^0.1.7",
+		"windicss": "^3.1.3"
+	}
+}
