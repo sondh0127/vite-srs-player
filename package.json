@@ -4,6 +4,9 @@
 	"files": [
 		"dist"
 	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"main": "./dist/vite-srs-player.umd.js",
 	"module": "./dist/vite-srs-player.es.js",
 	"types": "./dist/main.d.ts",
