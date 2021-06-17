@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { createVuePlugin } from 'vite-plugin-vue2'
 import WindiCSS from 'vite-plugin-windicss'
 import path from 'path'
 
@@ -19,7 +20,13 @@ export default defineConfig({
 			},
 		},
 	},
-	plugins: [vue(), WindiCSS()],
+	plugins: [
+		vue({
+			// include: ['demo/vue/**/*.{vue,jsx,tsx}'],
+		}),
+		// createVuePlugin({ include: ['demo/vue/**/*.{vue,jsx,tsx}'] }),
+		WindiCSS(),
+	],
 	optimizeDeps: {
 		exclude: ['vue-demi'],
 	},

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ref, defineComponent, watch } from 'vue-demi'
+import { ref, defineComponent, watch, h } from 'vue-demi'
 import { SrsRtcPlayerAsync } from './SrsRtcPlayerAsync'
 
 export default defineComponent({
@@ -8,7 +8,7 @@ export default defineComponent({
 		url: String,
 		autoStart: Boolean,
 	},
-	setup(props) {
+	setup(props, { slots }) {
 		const showVideo = ref(false)
 		const muted = ref(true)
 		const srcObject = ref(null)
@@ -67,18 +67,33 @@ export default defineComponent({
 			startPlay()
 		}
 
-		return {
-			showVideo,
-			srcObject,
-			muted,
-			sessionId,
-			simulatorDrop,
+		// return {
+		// 	showVideo,
+		// 	srcObject,
+		// 	muted,
+		// 	sessionId,
+		// 	simulatorDrop,
+		// }
+		return () => {
+			if (showVideo.value) {
+				// if (slots.default)
+				return h(
+					'video',
+					{
+						srcObject: srcObject.value,
+						muted: muted.value,
+						controls: '',
+						autoplay: '',
+					},
+					// slots.default(),
+				)
+			}
 		}
 	},
 })
 </script>
 
-<template>
+<!-- <template>
 	<video
 		v-show="showVideo"
 		:srcObject="srcObject"
@@ -87,5 +102,4 @@ export default defineComponent({
 		:muted="muted"
 	></video>
 	<slot name="session" :session="{ sessionId, simulatorDrop }"></slot>
-</template>
-<style></style>
+</template> -->
