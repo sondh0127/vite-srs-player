@@ -1,5 +1,6 @@
 {
 	"version": "0.0.1",
+	"private": "false",
 	"name": "@sondh/vite-srs-player",
 	"files": [
 		"dist"
