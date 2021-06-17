@@ -32,12 +32,12 @@ export default defineComponent({
 			const url = props.url
 			sdk
 				.play(url)
-				.then(function (session) {
+				.then(function (session: any) {
 					sessionId.value = session.sessionid
 					simulatorDrop.value =
 						session.simulator + '?drop=1&username=' + session.sessionid
 				})
-				.catch(function (reason) {
+				.catch(function (reason: any) {
 					sdk.close()
 					showVideo.value = false
 					console.error(reason)
