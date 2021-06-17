@@ -19,9 +19,9 @@
 	},
 	"scripts": {
 		"dev": "vite",
-		"build": "vue-tsc --noEmit && vite build",
+		"build": "NODE_ENV=production vue-tsc --noEmit && vite build",
 		"serve": "vite preview",
-		"publish:ci": "esno scripts/publish.ts"
+		"publish:ci": "NODE_ENV=production esno scripts/publish.ts"
 	},
 	"peerDependencies": {
 		"@vue/composition-api": "1.0.0-rc.11",
