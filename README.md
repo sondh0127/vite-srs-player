@@ -37,5 +37,6 @@ import SrsRtcPlayer from '@sondh0127/vite-srs-player'
 - autoStart: boolean should video autoplay
 - images: Array<{src: string, x: number, y: number, w: number, h: number}> watermark image, support multiple image
 
-
+## Limitation:
+- Can not load image from external source => workaround: you need to put your image in public asset then fill the 'src' with relative path
 
