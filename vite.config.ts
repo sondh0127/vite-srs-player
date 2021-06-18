@@ -9,7 +9,7 @@ export default defineConfig({
 	plugins: [
 		// vue(),
 		createVuePlugin({}),
-		// WindiCSS(),
+		WindiCSS(),
 	],
 	resolve: {
 		alias: {

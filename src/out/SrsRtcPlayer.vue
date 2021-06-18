@@ -1,11 +1,17 @@
 <template>
-  <video controls="" autoplay="" ref="videoRef" :muted="muted"></video>
+  <video
+    ref="videoTargetRef"
+    :autoPlay="true"
+    :playsInline="true"
+    :muted="true"
+  ></video>
 </template>
 <script>
 import { SrsRtcPlayerAsync } from "../components/SrsRtcPlayerAsync";
+import { WebRtcSB } from "../components/WebRtcShitBlt";
 
 export default {
-  props: ["url", "autoStart"],
+  props: ["images", "url", "autoStart"],
 
   data: () => ({
     showVideo: false,
@@ -14,6 +20,7 @@ export default {
     sessionId: "",
     simulatorDrop: "",
     SrsRtcPlayerAsync,
+    WebRtcSB,
   }),
 
   mounted() {
@@ -28,18 +35,8 @@ export default {
 
       sdk = SrsRtcPlayerAsync(); // https://webrtc.org/getting-started/remote-streams
 
-      this.srcObject = sdk.stream;
-      console.log(
-        "🇻🇳 ~ file: jsx.lite.jsx ~ line 27 ~ this.srcObject",
-        this.srcObject
-      );
-      this.$refs.videoRef.srcObject = sdk.stream;
-      console.log(
-        "🇻🇳 ~ file: jsx.lite.jsx ~ line 52 ~ videoRef",
-        this.$refs.videoRef
-      ); // Optional callback, SDK will add track to stream.
+      WebRtcSB(sdk.stream, this.$refs.videoTargetRef, this.images || []); // Optional callback, SDK will add track to stream.
       // sdk.ontrack = function (event) { console.log('Got track', event); sdk.stream.addTrack(event.track); };
-      // For example: webrtc://r.ossrs.net/live/livestream
 
       const url = this.url;
       sdk

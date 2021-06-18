@@ -25,7 +25,6 @@ export function SrsRtcPlayerAsync() {
 	//      webrtc://r.ossrs.net/live/livestream?vhost=xxx
 	//      webrtc://r.ossrs.net/live/livestream?token=xxx
 	self.play = async function (url) {
-		console.log('🇻🇳 ~ file: srs.sdk.js ~ line 309 ~ url', url)
 		var conf = self.__internal.prepareUrl(url)
 		self.pc.addTransceiver('audio', { direction: 'recvonly' })
 		self.pc.addTransceiver('video', { direction: 'recvonly' })

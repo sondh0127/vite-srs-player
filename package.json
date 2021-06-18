@@ -1,5 +1,5 @@
 {
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"name": "@sondh0127/vite-srs-player",
 	"files": [
 		"dist"
@@ -19,8 +19,8 @@
 	},
 	"scripts": {
 		"dev": "vite",
-		"prebuild-vue": "pnpx jsx-lite compile --to=vue src/SrsRtcPlayer.lite.jsx --out src/out/SrsRtcPlayer.vue --force",
-		"prebuild-react": "pnpx jsx-lite compile --to=react src/SrsRtcPlayer.lite.jsx --state=useState --out src/out/SrsRtcPlayer.jsx --force",
+		"prebuild-vue": "pnpx jsx-lite compile --to=vue src/out/SrsRtcPlayer.lite.jsx --out src/out/SrsRtcPlayer.vue --force",
+		"prebuild-react": "pnpx jsx-lite compile --to=react src/out/SrsRtcPlayer.lite.jsx --state=useState --out src/out/SrsRtcPlayer.jsx --force",
 		"build": "NODE_ENV=production vite build",
 		"rebuild": "esno scripts/build.ts",
 		"serve": "vite preview",

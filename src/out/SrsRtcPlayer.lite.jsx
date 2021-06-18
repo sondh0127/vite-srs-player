@@ -1,8 +1,9 @@
 import { useState, Show, For, onMount, useRef } from '@jsx-lite/core'
 import { SrsRtcPlayerAsync } from '../components/SrsRtcPlayerAsync'
+import {WebRtcSB} from '../components/WebRtcShitBlt'
 
 export default function MyComponent(props) {
-	const videoRef = useRef();
+	const videoTargetRef = useRef()
 
 	const state = useState({
 		showVideo: false,
@@ -15,7 +16,12 @@ export default function MyComponent(props) {
 		// 	state.list = [...state.list, state.newItemName]
 		// },
 	})
+
+	
+
 	onMount(() => {
+	
+
 		let sdk = null
 		const startPlay = () => {
 			state.showVideo = true
@@ -25,18 +31,12 @@ export default function MyComponent(props) {
 			}
 			sdk = SrsRtcPlayerAsync()
 			// https://webrtc.org/getting-started/remote-streams
-			state.srcObject = sdk.stream
-			console.log(
-				'🇻🇳 ~ file: jsx.lite.jsx ~ line 27 ~ state.srcObject',
-				state.srcObject,
-			)
-			videoRef.srcObject = sdk.stream;
-			console.log('🇻🇳 ~ file: jsx.lite.jsx ~ line 52 ~ videoRef', videoRef)
 
+
+			WebRtcSB(sdk.stream, videoTargetRef, props.images || [])
 			// Optional callback, SDK will add track to stream.
 			// sdk.ontrack = function (event) { console.log('Got track', event); sdk.stream.addTrack(event.track); };
 
-			// For example: webrtc://r.ossrs.net/live/livestream
 			const url = props.url
 			sdk
 				.play(url)
@@ -76,12 +76,11 @@ export default function MyComponent(props) {
 		// </div>
 		// <Show when={state.showVideo}>
 		<video
-			ref={videoRef}
-			// srcObject={state.srcObject}
-			controls=""
-			autoplay=""
-			muted={state.muted}
-		></video>
+			ref={videoTargetRef}
+			autoPlay={true}
+			playsInline={true}
+			muted={true}
+		/>
 		// </Show>
 	)
 }

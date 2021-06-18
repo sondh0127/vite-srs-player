@@ -1,6 +1,20 @@
 <template>
-	<div>
-		<SrsRtcPlayer :url="url" :auto-start="autoStart" />
+	<div class="">
+		<SrsRtcPlayer
+			:url="url"
+			:auto-start="autoStart"
+			:images="[
+				{ src: 'logo.png', x: 10, y: 10, w: 60, h: 50 },
+				{ src: 'logo.png', x: 640 - 60 / 2, y: 10, w: 60, h: 50 },
+				{ src: 'logo.png', x: 1280 - 60 - 10, y: 10, w: 60, h: 50 },
+				{ src: 'logo.png', x: 10, y: 360 - 50 / 2, w: 60, h: 50 },
+				{ src: 'logo.png', x: 640 - 60 / 2, y: 360 - 50 / 2, w: 60, h: 50 },
+				{ src: 'logo.png', x: 1280 - 60 - 10, y: 360 - 50 / 2, w: 60, h: 50 },
+				{ src: 'logo.png', x: 10, y: 720 - 50 - 10, w: 60, h: 50 },
+				{ src: 'logo.png', x: 640 - 60 / 2, y: 720 - 50 - 10, w: 60, h: 50 },
+				{ src: 'logo.png', x: 1280 - 60 - 10, y: 720 - 50 - 10, w: 60, h: 50 },
+			]"
+		/>
 	</div>
 </template>
 

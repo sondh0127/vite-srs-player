@@ -1,4 +1,4 @@
-// import 'virtual:windi.css'
+import 'virtual:windi.css'
 // import { createApp, h } from 'vue-demi'
 import Vue from 'vue'
 // import { install } from 'vue-demi'
