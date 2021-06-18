@@ -1,5 +1,5 @@
 {
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"name": "@sondh0127/vite-srs-player",
 	"files": [
 		"dist"
@@ -35,11 +35,10 @@
 			"optional": true
 		}
 	},
-	"dependencies": {
-		"@jsx-lite/core": "^0.0.43",
-		"vue-demi": "^0.9.1"
-	},
+	"dependencies": {},
 	"devDependencies": {
+		"@jsx-lite/core": "^0.0.43",
+		"vue-demi": "^0.9.1",
 		"@jsx-lite/cli": "^1.0.1",
 		"@vitejs/plugin-vue": "^1.2.3",
 		"@vue/compiler-sfc": "^3.1.1",
