@@ -6,6 +6,19 @@
 - [ ] RTC Svelte
 - [ ] Hls
 
+## Installation
+```sh
+pnpm install @sondh0127/vite-srs-player
+```
+
+
+```sh
+yarn install @sondh0127/vite-srs-player
+```
+
+```sh
+npm install @sondh0127/vite-srs-player
+```
 ## Usage
 ```vuejs
 import SrsRtcPlayer from '@sondh0127/vite-srs-player'
@@ -19,10 +32,10 @@ import SrsRtcPlayer from '@sondh0127/vite-srs-player'
 />
 ```
 
-## Config:
-- url: Web RTC stream link
-- autoStart: should video autoplay
-- images: watermark image, support multiple image
+## Configuration:
+- url: string -  Web RTC stream link
+- autoStart: boolean should video autoplay
+- images: Array<{src: string, x: number, y: number, w: number, h: number}> watermark image, support multiple image
 
 
 
