@@ -67,39 +67,24 @@ export default defineComponent({
 			startPlay()
 		}
 
-		// return {
-		// 	showVideo,
-		// 	srcObject,
-		// 	muted,
-		// 	sessionId,
-		// 	simulatorDrop,
-		// }
-		return () => {
-			if (showVideo.value) {
-				// if (slots.default)
-				return h(
-					'video',
-					{
-						srcObject: srcObject.value,
-						muted: muted.value,
-						controls: '',
-						autoplay: '',
-					},
-					// slots.default(),
-				)
-			}
+		return {
+			showVideo,
+			srcObject,
+			muted,
+			sessionId,
+			simulatorDrop,
 		}
 	},
 })
 </script>
 
-<!-- <template>
+<template>
 	<video
 		v-show="showVideo"
-		:srcObject="srcObject"
+		:srcObject.prop="srcObject"
 		controls
 		autoplay
 		:muted="muted"
 	></video>
-	<slot name="session" :session="{ sessionId, simulatorDrop }"></slot>
-</template> -->
+	<!-- <slot name="session" :session="{ sessionId, simulatorDrop }"></slot> -->
+</template>

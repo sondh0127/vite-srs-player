@@ -19,7 +19,10 @@
 	},
 	"scripts": {
 		"dev": "vite",
+		"prebuild-vue": "pnpx jsx-lite compile --to=vue src/SrsRtcPlayer.lite.jsx --out src/out/SrsRtcPlayer.vue --force",
+		"prebuild-react": "pnpx jsx-lite compile --to=react src/SrsRtcPlayer.lite.jsx --state=useState --out src/out/SrsRtcPlayer.jsx --force",
 		"build": "NODE_ENV=production vue-tsc --noEmit && vite build",
+		"rebuild": "esno scripts/build.ts",
 		"serve": "vite preview",
 		"publish:ci": "NODE_ENV=production esno scripts/publish.ts"
 	},
@@ -33,18 +36,21 @@
 		}
 	},
 	"dependencies": {
+		"@jsx-lite/core": "^0.0.43",
 		"vue-demi": "^0.9.1"
 	},
 	"devDependencies": {
+		"@jsx-lite/cli": "^1.0.1",
 		"@vitejs/plugin-vue": "^1.2.3",
 		"@vue/compiler-sfc": "^3.1.1",
+		"@vue/composition-api": "^1.0.0-rc.1",
 		"consola": "^2.15.3",
 		"esno": "^0.7.3",
 		"typescript": "^4.3.3",
 		"vite": "^2.3.7",
 		"vite-plugin-vue2": "^1.6.2",
 		"vite-plugin-windicss": "^1.0.4",
-		"vue": "^3.0.5",
+		"vue": "^2.6.14",
 		"vue-tsc": "^0.1.7",
 		"windicss": "^3.1.3"
 	}

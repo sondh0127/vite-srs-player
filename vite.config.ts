@@ -6,11 +6,24 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	plugins: [
+		// vue(),
+		createVuePlugin({}),
+		// WindiCSS(),
+	],
+	resolve: {
+		alias: {
+			'@': `${path.resolve(__dirname, 'src')}`,
+		},
+		dedupe: ['vue-demi'],
+	},
 	build: {
 		lib: {
 			name: 'VueInteractive',
-			entry: path.resolve(__dirname, 'src/main.ts'),
+			// entry: path.resolve(__dirname, 'src/main.ts'),
+			entry: path.resolve(__dirname, 'src/main.lite.ts'),
 		},
+		minify: false,
 		rollupOptions: {
 			external: ['vue'],
 			output: {
@@ -20,13 +33,6 @@ export default defineConfig({
 			},
 		},
 	},
-	plugins: [
-		vue({
-			// include: ['demo/vue/**/*.{vue,jsx,tsx}'],
-		}),
-		// createVuePlugin({ include: ['demo/vue/**/*.{vue,jsx,tsx}'] }),
-		WindiCSS(),
-	],
 	optimizeDeps: {
 		exclude: ['vue-demi'],
 	},
