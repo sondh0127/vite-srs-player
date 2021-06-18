@@ -3,7 +3,7 @@ import path from 'path'
 // import { activePackages } from '../meta/packages'
 import consola from 'consola'
 
-execSync('npm run build', { stdio: 'inherit' })
+execSync('pnpm build', { stdio: 'inherit' })
 
 const name = 'vite-srs-player'
 // for (const { name } of activePackages) {
