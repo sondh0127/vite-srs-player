@@ -1,5 +1,5 @@
 {
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"name": "@sondh0127/vite-srs-player",
 	"files": [
 		"dist"
@@ -17,6 +17,16 @@
 			"require": "./dist/style.css"
 		}
 	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/sondh0127/vite-srs-player"
+	},
+	"keywords": [
+		"srs",
+		"srs-player",
+		"player",
+		"vite"
+	],
 	"scripts": {
 		"dev": "vite",
 		"prebuild-vue": "pnpx jsx-lite compile --to=vue src/out/SrsRtcPlayer.lite.jsx --out src/out/SrsRtcPlayer.vue --force",
